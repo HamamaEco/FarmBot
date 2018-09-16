@@ -52,7 +52,6 @@ void split(String s, char del, String arr[]) {
     }  
   }
 }
-//hi
 void handleCommands() {
   if(!Serial) return;
   String input = Serial.readString();
