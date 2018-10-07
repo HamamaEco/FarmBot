@@ -30,7 +30,7 @@
 #define homeSW 2 // Pin 2 connected to Home Switch 
 #define limitSW 3 // Pin 3 connected to Limit SW
 #define waterOn 12 //pin 12 connected to water coil
-#define humidityPin placeholder;
+#define humidityPin 0;
 #define waterPin 21;
  bool Home=false,MOVING=false;
  long initial_homing=-1,TravelX=0;
