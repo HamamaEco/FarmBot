@@ -216,16 +216,20 @@ void MAIN_PLANT_LOOP()
 void WATER_PLANT(long height) {
   MOVE_TO("Z",  height);
   delay(2);
+  Serial.println("Watering..");
   int humidity = analogRead(humidityPin);
-  Serial.println(humidity);
   plant.humidity = humidity;
   int mintime = 5;
   int maxtime = 20;
-  int wateringtime = map(humidity,255,mintime,maxtime);
+  int mappedmist = map(humidity, 0, 1023, mintime, maxtime);
+
+  
   
   digitalWrite(waterPin, HIGH);
+   Serial.println("Watering in progress..");
   delay(wateringtime);
   digitalWrite(waterPin, LOW);
+   Serial.println("Done watering");
    MOVE_TO("Z", -height);
 }
 
